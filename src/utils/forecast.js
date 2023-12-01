@@ -9,7 +9,7 @@ const forecast = (address, callback) => {
         } else if (res.body.error) {
             callback('Unable to find location', undefined)
         } else {
-            callback(undefined, address + ' Country temperature is  ' + res.body.current.temperature)
+            callback(undefined, res.body.location.name + ' temperature is  ' + res.body.current.temperature+ 'C, latitude is '+ res.body.location.lat + ' and longitude is '+ res.body.location.lon + ' Now current time is '+ res.body.current.observation_time )
         }
     })
 }
